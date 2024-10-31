@@ -1,7 +1,7 @@
 # ViWhisper
 ## Introduction
 - We release a new model for Vietnamese speech regconition task.
-- We fine-tuned [openai/whisper-small](https://huggingface.co/openai/whisper-small) on our new dataset [VSV-1100](https://huggingface.co/datasets/NhutP/VSV-1100).
+- We fine-tuned openai/whisper on our new dataset [VSV-1100](https://huggingface.co/datasets/NhutP/VSV-1100).
 
 ## Training data
 
