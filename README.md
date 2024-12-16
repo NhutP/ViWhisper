@@ -17,7 +17,7 @@
 |Tiny|Updating|Updating|Updating|Updating|Updating|Updating|Updating|
 |Base|Updating|Updating|Updating|Updating|Updating|Updating|Updating|
 |[Small](https://huggingface.co/NhutP/ViWhisper-small)|9.79|5.74|14.15|39.25| 14 | 10.06 | 5.97 |
-|Medium|Updating|Updating|Updating|Updating|Updating|Updating|Updating|
+|[Medium](https://huggingface.co/NhutP/ViWhisper-medium)|8.1|4.69|13.22|28.76| 11.78 | 8.28 | 5.38 |
 
 
 ## Usage
