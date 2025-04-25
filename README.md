@@ -14,8 +14,8 @@
 ## WER result
 |Version| [CMV14-vi](https://huggingface.co/datasets/mozilla-foundation/common_voice_14_0) | [VIVOS](https://huggingface.co/datasets/AILAB-VNUHCM/vivos) | [VLSP2020-T1](https://vlsp.org.vn/index.php/resources) | [VLSP2020-T2](https://vlsp.org.vn/index.php/resources) | [VLSP2021-T1](https://vlsp.org.vn/index.php/resources) | [VLSP2021-T2](https://vlsp.org.vn/index.php/resources) |[Bud500](https://huggingface.co/datasets/linhtran92/viet_bud500) |
 |:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|
-|Tiny|Updating|Updating|Updating|Updating|Updating|Updating|Updating|
-|Base|Updating|Updating|Updating|Updating|Updating|Updating|Updating|
+|[Tiny](https://huggingface.co/NhutP/ViWhisper-tiny)|16.3|9.43|17.44|50.35| 20.15 | 13.86 | 7.86 |
+|[Base](https://huggingface.co/NhutP/ViWhisper-base)|13.74|7.94|16.02|45.55| 17.25 | 12.32 | 6.63 |
 |[Small](https://huggingface.co/NhutP/ViWhisper-small)|9.79|5.74|14.15|39.25| 14 | 10.06 | 5.97 |
 |[Medium](https://huggingface.co/NhutP/ViWhisper-medium)|8.1|4.69|13.22|28.76| 11.78 | 8.28 | 5.38 |
 
