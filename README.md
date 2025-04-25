@@ -1,11 +1,11 @@
 # ViWhisper
 ## Introduction
 - We release a new model for Vietnamese speech regconition task.
-- We fine-tuned openai/whisper on our new dataset [VSV-1100](https://huggingface.co/datasets/NhutP/VSV-1100).
+- We fine-tuned openai/whisper on our new dataset [VietSpeech](https://huggingface.co/datasets/NhutP/VietSpeech).
 
 ## Training data
 
-| [VSV-1100](https://huggingface.co/datasets/NhutP/VSV-1100) | T2S* | [CMV14-vi](https://huggingface.co/datasets/mozilla-foundation/common_voice_14_0) |[VIVOS](https://huggingface.co/datasets/AILAB-VNUHCM/vivos)| [VLSP2021](https://vlsp.org.vn/index.php/resources) | Total|
+| [VietSpeech](https://huggingface.co/datasets/NhutP/VietSpeech) | T2S* | [CMV14-vi](https://huggingface.co/datasets/mozilla-foundation/common_voice_14_0) |[VIVOS](https://huggingface.co/datasets/AILAB-VNUHCM/vivos)| [VLSP2021](https://vlsp.org.vn/index.php/resources) | Total|
 |:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|
 |   1100 hours  |   11  hours |   3.04 hours  |    13.94  hours| 180 hours | 1308 hours |
 
@@ -31,7 +31,7 @@ processor = WhisperProcessor.from_pretrained(model_id)
 model = WhisperForConditionalGeneration.from_pretrained(model_id)
 model.config.forced_decoder_ids = None
 # load a sample
-array, sampling_rate = librosa.load(...) # Load some 
+array, sampling_rate = librosa.load(...) # Load some audio sample
 input_features = processor(array, sampling_rate=sampling_rate, return_tensors="pt").input_features 
 # generate token ids
 predicted_ids = model.generate(input_features)
@@ -56,10 +56,10 @@ output = pipe(path_to_audio_samplingrate_16000)['text']
 ## Citation
 
 ```
-@misc{VSV-1100,
+@misc{VietSpeech,
     author = {Pham Quang Nhut and Duong Pham Hoang Anh and Nguyen Vinh Tiep},
-    title = {VSV-1100: Vietnamese social voice dataset},
-    url = {https://github.com/NhutP/VSV-1100},
+    title = {VietSpeech: Vietnamese social voice dataset},
+    url = {https://github.com/NhutP/VietSpeech},
     year = {2024}
 }
 ```
