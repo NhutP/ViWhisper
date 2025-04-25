@@ -1,0 +1,6 @@
+ffmpeg-python==0.2.0
+more-itertools
+https://github.com/kpu/kenlm/archive/master.zip
+git+https://github.com/HKAB/whisper.git
+
+# sửa code file decoding whisper chỗ float tensor
