@@ -44,16 +44,30 @@ transcription = processor.batch_decode(predicted_ids, skip_special_tokens=True)
 ```
 ### Use with pipeline
 ```python
-from transformers import pipeline
+from transformers import WhisperProcessor, WhisperForConditionalGeneration, pipeline
+import librosa
+import torch
+
 model_id = .. # "NhutP/ViWhisper-small" or "NhutP/ViWhisper-tiny", ...
+
+# Load processor and model
+processor = WhisperProcessor.from_pretrained(model_id)
+model = WhisperForConditionalGeneration.from_pretrained(model_id)
+
+prefix_ids = model.generation_config.forced_decoder_ids
+model.generation_config.input_ids = prefix_ids
+model.generation_config.forced_decoder_ids = None
+
 pipe = pipeline(
     "automatic-speech-recognition",
-    model=model_id,
-    max_new_tokens=128,
+    model=model,                               # your patched model
+    tokenizer=processor.tokenizer,             # explicitly give the tokenizer
+    feature_extractor=processor.feature_extractor,  # and the feature extractor
+    device="" # cuda or cpu,
     chunk_length_s=30,
+    max_new_tokens=128,
     return_timestamps=False,
-    device= '...' # 'cpu' or 'cuda'
-) 
+)
 output = pipe(path_to_audio_samplingrate_16000)['text']
 ```
 
