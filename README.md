@@ -29,7 +29,11 @@ model_id = .. # "NhutP/ViWhisper-small" or "NhutP/ViWhisper-tiny", ...
 # load model and processor
 processor = WhisperProcessor.from_pretrained(model_id)
 model = WhisperForConditionalGeneration.from_pretrained(model_id)
-model.config.forced_decoder_ids = None
+
+prefix_ids = model.generation_config.forced_decoder_ids
+model.generation_config.input_ids = prefix_ids
+model.generation_config.forced_decoder_ids = None
+
 # load a sample
 array, sampling_rate = librosa.load(...) # Load some audio sample
 input_features = processor(array, sampling_rate=sampling_rate, return_tensors="pt").input_features 
